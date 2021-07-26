@@ -1,0 +1,149 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+.home-container {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: $kuning1;
+}
+
+nav {
+    width: inherit;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+    z-index: 5;
+    & div {
+        margin: 0 2rem;
+    }
+}
+
+.home-content {
+    width: 100%;
+    max-width: 70rem;
+    z-index: 1;
+    .form-container {
+        background-color: $biru1;
+        border-radius: 20px;
+        padding: 1.5rem;
+        color: $putih;
+        width: fit-content;
+        display: flex;
+        justify-content: space-between;
+        .form-content {
+            display: flex;
+            justify-content: center;
+            &-icon {
+                margin-right: 1rem;
+                &-wrapper {
+                    border: 1px $abu1 solid;
+                    border-radius: 20px;
+                    padding: 0.7rem;
+                    width: 4.5rem;
+                    height: 4.5rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    &-send {
+                        border: 0;
+                        background: $kuning2;
+                    }
+                }
+            }
+            &-input {
+                margin-right: 1rem;
+                display: flex;
+                flex-direction: column;
+
+                & > input {
+                    width: 20vw;
+                    border: 0;
+                    outline: 0;
+                    padding: 0.5rem;
+                    background: transparent;
+                    border-bottom: 2px solid $kuning2;
+                }
+            }
+            &-submit {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.p-hello {
+    margin-bottom: 0px;
+}
+
+.p-fill {
+    margin-top: 0px;
+}
+
+.home-women-graphic {
+    max-height: 97vh;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+}
+
+//GuestList Page
+
+.guestList-container {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: $kuning1;
+}
+
+.guestList-women-graphic {
+    max-height: 97vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.guestList-content {
+    z-index: 1;
+    width: 100%;
+    max-width: 70rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    h1 {
+        margin-bottom: 30px;
+    }
+    .guestList-table {
+        // margin-left: 350px;
+        background-color: $biru1;
+        height: 60vh;
+        border-radius: 20px;
+        table {
+            margin: 0;
+            padding: 20px;
+            width: 100%;
+        }
+    }
+}
