@@ -30,6 +30,9 @@
                 <span class="text-kuning2">Guest</span> Book!
             </h1>
             <p class="font-small-heading text-biru1 p-fill">Fill the book below</p>
+            @if ($message = Session::get('success'))
+                <p class="font-small-heading" style="color: green;">{{ $message }}</p>
+            @endif
             <form action="{{ route('addGuest') }}" method="POST">
                 @csrf
                 <div class="form-container">
