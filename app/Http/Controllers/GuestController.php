@@ -36,6 +36,6 @@ class GuestController extends Controller
             'name' => $request->name,
             'email' => $request->email
         ]);
-        return redirect()->back()->with('success','Thankyou, You are Friend Now! (not guest)');
+        return redirect()->back()->with('success','Thankyou, You have been recorded!');
     }
 }

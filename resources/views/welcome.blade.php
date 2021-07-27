@@ -33,6 +33,13 @@
             @if ($message = Session::get('success'))
                 <p class="font-small-heading" style="color: green;">{{ $message }}</p>
             @endif
+            @if ($errors->any())
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li class="font-small-heading" style="color: red;">{{ $error }}</li>
+                    @endforeach
+                </ul>
+            @endif
             <form action="{{ route('addGuest') }}" method="POST">
                 @csrf
                 <div class="form-container">
