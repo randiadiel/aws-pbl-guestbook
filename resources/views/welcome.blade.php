@@ -52,7 +52,7 @@
                         </div>
                         <div class="form-content-input">
                             <label for="name" class="font-input-heading text-abu1">Name</label>
-                            <input name="name" placeholder="John Hummingbert" class="font-small-heading text-kuning2"
+                            <input name="name" value="{{old('name')}}" placeholder="John Hummingbert" class="font-small-heading text-kuning2"
                                 type="text">
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                         </div>
                         <div class="form-content-input">
                             <label for="email" class="font-input-heading text-abu1">Email</label>
-                            <input name="email" placeholder="john@example.com" class="font-small-heading text-kuning2"
+                            <input name="email" value="{{old('email')}}" placeholder="john@example.com" class="font-small-heading text-kuning2"
                                 type="text">
                         </div>
                     </div>
