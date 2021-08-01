@@ -404,6 +404,13 @@ video {
   font-size: 1.125rem;
 }
 
+.font-link-text {
+  font-family: "Poppins", Tahoma, sans-serif;
+  font-weight: 700;
+  text-decoration: underline;
+  font-size: 1.125rem;
+}
+
 .font-button-selected {
   font-family: "Poppins", Tahoma, sans-serif;
   font-weight: 600;

@@ -21,3 +21,11 @@ Route::get('/', function () {
 Route::post('/guest/add', [GuestController::class,'create'])->name('addGuest');
 
 Route::get('/guest', [GuestController::class, 'view'])->name('guest');
+
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login');
+
+Route::get('/register', function () {
+    return view('auth.register');
+})->name('register');

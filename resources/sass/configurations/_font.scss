@@ -22,6 +22,13 @@
     @include font-size(18px);
 }
 
+.font-link-text {
+    font-family: "Poppins", Tahoma, sans-serif;
+    font-weight: 700;
+    text-decoration: underline;
+    @include font-size(18px);
+}
+
 .font-button-selected {
     font-family: "Poppins", Tahoma, sans-serif;
     font-weight: 600;
