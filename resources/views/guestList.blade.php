@@ -15,8 +15,30 @@
     <div class="guestList-container">
         <nav>
             <div class="nav-container">
-                <div class="font-button-text text-biru1"><a href="{{ route('home') }}">Home</a></div>
-                <div class="font-button-selected text-kuning2"><a href="{{ route('guest') }}">guests</a></div>
+                <span class="font-button-text">COMPANY X</span>
+            </div>
+            <div class="nav-container">
+                <div class="font-button-text text-biru1">
+                    <a href="{{ route('home') }}">Home</a>
+                </div>
+                <div class="font-button-selected text-kuning2">
+                    <a href="{{ route('guest') }}">guests</a>
+                </div>
+            </div>
+            <div class="nav-container">
+                @auth
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+
+                        <div class="font-button-text" :href="route('logout')" onclick="event.preventDefault();
+                                                                this.closest('form').submit();">
+                            {{ __('Log Out') }}
+                        </div>
+                    </form>
+                @endauth
+                @guest
+                    <a class="font-button-text" href="{{ route('login') }}">Login</a>
+                @endguest
             </div>
         </nav>
         <img class="guestList-women-graphic" src="{{ asset('assets/images/women2.png') }}"
@@ -28,13 +50,13 @@
                     <table>
                         <thead>
                             <td class="text-putih font-table-heading">Name</td>
-                            <td class="text-putih font-table-heading">E-Mail</td>
+                            <td class="text-putih font-table-heading">Nama Event</td>
                             <td class="text-putih font-table-heading">TimeStamp</td>
                         </thead>
                         @foreach ($guests as $guest)
                             <tr>
-                                <td class="text-kuning2 font-small-heading">{{ $guest->name }}</td>
-                                <td class="text-kuning2 font-small-heading">{{ $guest->email }}</td>
+                                <td class="text-kuning2 font-small-heading">{{ $guest->user->name }}</td>
+                                <td class="text-kuning2 font-small-heading">{{ $guest->event_name }}</td>
                                 <td class="text-kuning2 font-small-heading">{{ $guest->created_at }}</td>
                             </tr>
                         @endforeach

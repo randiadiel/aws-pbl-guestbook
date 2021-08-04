@@ -14,6 +14,16 @@
 
 <body class="antialiased">
     <div class="home-container">
+        <nav>
+            <div class="nav-container">
+                <div class="font-button-selected text-kuning2">
+                    <a href="{{ route('home') }}">Home</a>
+                </div>
+                <div class="font-button-text text-biru1">
+                    <a href="{{ route('guest') }}">guests</a>
+                </div>
+            </div>
+        </nav>
         <div class="home-content">
             <p class="font-button-text text-biru1 p-hello">Welcome Back,</p>
             <h1 class="font-heading1 text-biru1 ">Login.</h1>
@@ -28,22 +38,10 @@
                     @endforeach
                 </ul>
             @endif
-            <form action="{{ route('addGuest') }}" method="POST">
+            <x-auth-validation-errors class="mb-4" :errors="$errors" />
+            <form action="{{ route('login') }}" method="POST">
                 @csrf
                 <div class="form-container">
-                    <div class="form-content">
-                        <div class="form-content-icon">
-                            <div class="form-content-icon-wrapper">
-                                <span class="iconify" data-inline="false" data-icon="bx:bx-user"
-                                    style="color: #ffffff; font-size: 47px;"></span>
-                            </div>
-                        </div>
-                        <div class="form-content-input">
-                            <label for="email" class="font-input-heading text-abu1">Email</label>
-                            <input name="email" value="{{ old('email') }}" placeholder="john@example.com"
-                                class="font-small-heading text-kuning2" type="email">
-                        </div>
-                    </div>
                     <div class="form-content">
                         <div class="form-content-icon">
                             <div class="form-content-icon-wrapper">
@@ -52,9 +50,24 @@
                             </div>
                         </div>
                         <div class="form-content-input">
-                            <label for="password" class="font-input-heading text-abu1">Password</label>
-                            <input name="password" value="{{ old('password') }}" placeholder="Password"
-                                class="font-small-heading text-kuning2" type="password">
+                            <label for="email" class="font-input-heading text-abu1"> Email </label>
+                            <input name="email" value="{{ old('email') }}" placeholder="john@example.com"
+                                class="font-small-heading text-kuning2" type="email" required autofocus />
+                        </div>
+                    </div>
+                    <div class="form-content">
+                        <div class="form-content-icon">
+                            <div class="form-content-icon-wrapper">
+
+                                <span class="iconify" data-inline="false" data-icon="codicon:key"
+                                    style="color: #fff; font-size: 43px;"></span>
+                            </div>
+                        </div>
+                        <div class="form-content-input">
+                            <label for="password" class="font-input-heading text-abu1"> Password </label>
+                            <input id="password" name="password" value="{{ old('password') }}" placeholder="Password"
+                                class="font-small-heading text-kuning2" type="password" required
+                                autocomplete="current-password" />
                         </div>
                     </div>
                     <label for="submit-button" class="form-content-submit">

@@ -9,5 +9,10 @@ class Guest extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'email'];
+    protected $fillable = ['user_id', 'location', 'event_name'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

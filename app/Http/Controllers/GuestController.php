@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Guest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class GuestController extends Controller
 {
@@ -29,12 +30,13 @@ class GuestController extends Controller
     public function create(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'email' => 'required|email'
+            'location' => 'required',
+            'event_name' => 'required'
         ]);
         Guest::create([
-            'name' => $request->name,
-            'email' => $request->email
+            'user_id' => Auth::id(),
+            'event_name' => $request->event_name,
+            'location' => $request->location
         ]);
         return redirect()->back()->with('success','Thankyou, You have been recorded!');
     }

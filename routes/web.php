@@ -18,14 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::post('/guest/add', [GuestController::class,'create'])->name('addGuest');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+Route::post('/guest/add', [GuestController::class,'create'])->middleware('auth')->name('addGuest');
 
 Route::get('/guest', [GuestController::class, 'view'])->name('guest');
 
-Route::get('/login', function () {
-    return view('auth.login');
-})->name('login');
-
-Route::get('/register', function () {
-    return view('auth.register');
-})->name('register');
+require __DIR__.'/auth.php';
