@@ -16,7 +16,7 @@
     <div class="home-container">
         <nav>
             <div class="nav-container">
-                <span class="font-button-text">COMPANY X</span>
+                <span class="font-button-text">COMPANY Z</span>
             </div>
             <div class="nav-container">
                 <div class="font-button-selected text-kuning2">
@@ -32,7 +32,7 @@
                         @csrf
 
                         <div class="font-button-text" :href="route('logout')" onclick="event.preventDefault();
-                                                    this.closest('form').submit();">
+                                                        this.closest('form').submit();">
                             {{ __('Log Out') }}
                         </div>
                     </form>
