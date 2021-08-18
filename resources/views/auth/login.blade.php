@@ -37,8 +37,7 @@
                         <li class="font-small-heading" style="color: red;">{{ $error }}</li>
                     @endforeach
                 </ul>
-            @endif
-            <x-auth-validation-errors class="mb-4" :errors="$errors" />
+            @endif  
             <form action="{{ route('login') }}" method="POST">
                 @csrf
                 <div class="form-container">
