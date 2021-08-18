@@ -45,7 +45,7 @@
         <div class="home-content">
             <p class="font-button-text text-biru1 p-hello">Hello People</p>
             <h1 class="font-heading1 text-biru1 ">Welcome to our <br>
-                <span class="text-kuning2">Guest</span> Book!
+                <span class="text-kuning2">Guest</span>Book!
             </h1>
             <p class="font-small-heading text-biru1 p-fill">Fill the book below</p>
             @if ($message = Session::get('success'))
