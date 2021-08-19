@@ -16,7 +16,7 @@
     <div class="home-container">
         <nav>
             <div class="nav-container">
-                <span class="font-button-text">COMPANY AWS</span>
+                <span class="font-button-text">COMPANY x</span>
             </div>
             <div class="nav-container">
                 <div class="font-button-selected text-kuning2">
